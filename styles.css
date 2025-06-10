@@ -1,9 +1,9 @@
 :root {
-    --color-good: #4caf50;
-    --color-moderate: #ffeb3b;
-    --color-unhealthy: #ff9800;
-    --color-very-unhealthy: #f44336;
-    --color-hazardous: #9c27b0;
+    --color-good: #2d8a30;
+    --color-moderate: #f9a825;
+    --color-unhealthy: #e65100;
+    --color-very-unhealthy: #c41e3a;
+    --color-hazardous: #6a0dad;
 }
 
 body {
@@ -23,6 +23,13 @@ h1 {
     color: #333;
     text-align: center;
     margin-bottom: 30px;
+}
+
+.last-update {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.9em;
 }
 
 #stations-container {

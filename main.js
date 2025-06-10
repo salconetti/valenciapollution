@@ -17,11 +17,21 @@ function getAirQualityLevel(pollutant, value) {
     return 'hazardous';
 }
 
+function updateLastUpdateTime() {
+    const now = new Date();
+    const formatted = now.toLocaleString('es-ES', { 
+        dateStyle: 'short', 
+        timeStyle: 'medium' 
+    });
+    document.getElementById('last-update-time').textContent = formatted;
+}
+
 async function fetchData() {
     try {
         const response = await fetch('https://valencia.opendatasoft.com/api/records/1.0/search/?dataset=estacions-contaminacio-atmosferiques-estaciones-contaminacion-atmosfericas&rows=100');
         const data = await response.json();
         displayData(data.records);
+        updateLastUpdateTime();
     } catch (error) {
         console.error('Error fetching data:', error);
         document.getElementById('stations-container').innerHTML = '<p>Error al cargar los datos. Por favor, intente más tarde.</p>';
